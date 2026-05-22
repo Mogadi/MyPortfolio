@@ -1,0 +1,60 @@
+%!Adobe-FontList 1.23
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Kahlil
+FamilyName:Kahlil
+StyleName:Regular
+FullName:Kahlil
+MenuName:Kahlil
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\mo\A Projects\Graphic Design\Nakha\Font\Kahlil-YzP9L.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:50952
+FileModTime:1670118840
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Kahlil
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\mo\A Projects\Graphic Design\Nakha\Font\info.txt
+FileModTime:1670118840
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\mo\A Projects\Graphic Design\Nakha\Font\kahlil-font.zip
+FileModTime:1686936649
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\mo\A Projects\Graphic Design\Nakha\Font\misc\Kahlil-2bb4.woff2
+FileModTime:1670118840
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\mo\A Projects\Graphic Design\Nakha\Font\misc\Kahlil-a2b9.woff
+FileModTime:1670118840
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\mo\A Projects\Graphic Design\Nakha\Font\misc\ReadMe-0b36.pdf
+FileModTime:1670118840
+%EndFont
+

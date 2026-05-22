@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Project — Mohammed Osama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #03070E;
+    --deep: #052c43;
+    --nebula-blue: #054569;
+    --dust: #9bcddd;
+    --stardust: #FFFFFF;
+    --star: #FFFFFF;
+    --gold: #A5743D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--void); color: var(--stardust);
+    font-family: 'Rajdhani', sans-serif; font-weight: 400; font-size: 1.1rem;
+    overflow-x: hidden; cursor: none;
+  }
+  
+  /* Shared Base Styles */
+  .cursor { position: fixed; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s ease; }
+  .cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(165, 116, 61, 0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.15s ease, width 0.2s, height 0.2s; }
+  .star-field { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(3,7,14,0.9) 0%, transparent 100%); }
+  .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; text-decoration: none; }
+  .nav-back { color: var(--dust); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-back:hover { color: var(--star); }
+
+  /* Social Media Page Specific Styles */
+  .client-hero {
+    position: relative; z-index: 1;
+    width: 100%; height: 50vh;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle, rgba(5,69,105,0.3) 0%, var(--void) 100%);
+    border-bottom: 1px solid rgba(155,205,221,0.1);
+  }
+  /* Client Logo/Cover setup */
+  .client-logo {
+    max-width: 500px; max-height: 400px;
+    object-fit: contain;
+  }
+
+  .client-info {
+    position: relative; z-index: 1;
+    max-width: 800px; margin: 4rem auto; padding: 0 2rem; text-align: center;
+  }
+  .client-title {
+    font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--star);
+    margin-bottom: 1rem; font-weight: 400;
+  }
+  .client-bio {
+    font-size: 1.1rem; line-height: 1.8; color: var(--dust);
+  }
+
+  /* Floating Space Gallery */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1.5deg); }
+  }
+  
+  .space-gallery {
+    position: relative; z-index: 1;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;
+    padding: 2rem 4rem 8rem;
+  }
+  
+  .float-img {
+    width: calc(25% - 3rem); /* Shows roughly 4 per row */
+    min-width: 200px; aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid rgba(155,205,221,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Staggering the animations so they float organically at different times */
+  .float-img:nth-child(2n) { animation-delay: 1s; animation-duration: 7s; }
+  .float-img:nth-child(3n) { animation-delay: 2.5s; animation-duration: 5.5s; transform: translateY(20px); }
+  .float-img:nth-child(4n) { animation-delay: 0.5s; animation-duration: 8s; }
+  .float-img:nth-child(5n) { animation-delay: 1.5s; animation-duration: 6.5s; transform: translateY(-15px); }
+
+  footer { position: relative; z-index: 1; padding: 2rem 4rem; border-top: 1px solid rgba(155,205,221,0.1); display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; color: rgba(155,205,221,0.5); }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas class="star-field" id="stars"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-logo">Mohammed Osama</a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<section class="client-hero">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Icon copy 2.png" alt="Mo's Logo" class="client-logo">
+</section>
+
+<section class="client-info">
+  <h1 class="client-title">Others</h1>
+  <p class="client-bio">
+     Random selected Posters
+  </p>
+</section>
+
+<section class="space-gallery">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Eid2.jpg" class="float-img" alt="Post 1">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Artboard 1-10.jpg" class="float-img" alt="Post 2">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Untitled-1.jpg" class="float-img" alt="Post 3">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Artboard 1.jpg" class="float-img" alt="Post 4">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Ramadan.jpg" class="float-img" alt="Post 5">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\.Ruan 1.png" class="float-img" alt="Post 6">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\1100+.png" class="float-img" alt="Post 7">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Break day 2.png" class="float-img" alt="Post 8">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Content_Writing_Workshop1.2.jpg" class="float-img" alt="Post 9">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Eid Ad'ha.jpg" class="float-img" alt="Post 10">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Eid-100.jpg" class="float-img" alt="Post 11">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Elex.jpg" class="float-img" alt="Post 12">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Food1.png" class="float-img" alt="Post 13">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Medicine1 copy.png" class="float-img" alt="Post 14">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Medicine1.png" class="float-img" alt="Post 15">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Pentix-Eiad.jpg" class="float-img" alt="Post 16">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Ramadan.jpg" class="float-img" alt="Post 17">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Sahwa_2.jpg" class="float-img" alt="Post 18">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Sahwa_3.jpg" class="float-img" alt="Post 19">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Sahwa_5.jpg" class="float-img" alt="Post 20">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\Sahwa_6.jpg" class="float-img" alt="Post 20">
+  <img src="E:\Code\WebSite_portfolio\Version2\_Others\أبدا_من_وين4.jpg" class="float-img" alt="Post 20">
+  
+  
+  
+  
+  
+</section>
+
+<footer>
+  <p class="footer-copy">© 2026 Mohammed Osama. All rights reserved.</p>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor'); const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+function animateRing() { rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateRing); } animateRing();
+document.querySelectorAll('a').forEach(el => { el.addEventListener('mouseenter', () => { ring.style.width = '50px'; ring.style.height = '50px'; cursor.style.opacity = '0'; }); el.addEventListener('mouseleave', () => { ring.style.width = '32px'; ring.style.height = '32px'; cursor.style.opacity = '1'; }); });
+
+const canvas = document.getElementById('stars'); const ctx = canvas.getContext('2d');
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; } resize();
+window.addEventListener('resize', () => { resize(); drawStars(); });
+const stars = []; for (let i = 0; i < 280; i++) { stars.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.5 + 0.2, a: Math.random() * 0.7 + 0.1, speed: Math.random() * 0.0003 + 0.0001, phase: Math.random() * Math.PI * 2 }); }
+let t = 0; function drawStars() { ctx.clearRect(0, 0, canvas.width, canvas.height); t += 0.01; stars.forEach(s => { const alpha = s.a * (0.6 + 0.4 * Math.sin(t * s.speed * 1000 + s.phase)); ctx.beginPath(); ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2); ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`; ctx.fill(); }); requestAnimationFrame(drawStars); } drawStars();
+</script>
+</body>
+</html>
