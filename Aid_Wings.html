@@ -85,10 +85,31 @@
     width: 100%; height: 100%; object-fit: cover;
     transition: transform 0.7s ease;
   }
+
+  img {
+  max-width: 100%;
+  height: auto;
+  }
   .mockup-item:hover img { transform: scale(1.05); }
 
   footer { position: relative; z-index: 1; padding: 2rem 4rem; border-top: 1px solid rgba(155,205,221,0.1); display: flex; justify-content: space-between; align-items: center; }
   .footer-copy { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; color: rgba(155,205,221,0.5); }
+
+  /* Mobile Layout */
+  @media (max-width: 768px) {
+    nav { padding: 1.5rem 2rem; }
+    .project-header { padding: 3rem 2rem 2rem; }
+    .project-title { font-size: 2.5rem; }
+    .project-content { margin: 2rem auto; padding: 0 1.5rem; }
+    
+    /* Stack mockup images vertically */
+    .mockup-grid { 
+      grid-template-columns: 1fr; 
+      padding: 0 1.5rem 4rem;
+      gap: 1rem;
+    }
+    .cursor, .cursor-ring { display: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -103,7 +124,7 @@
 </nav>
 
 <section class="project-hero">
-  <img src="Aid_Wings/Artboard 5.png" alt="Project Cover" class="project-cover-img">
+  <img src="Aid_Wings/Artboard 5.png" loading="lazy" alt="Project Cover" class="project-cover-img">
   
   <div class="project-header">
     <p class="project-date">Feb 2026</p>
@@ -124,9 +145,9 @@ uplift communities.
 </section>
 
 <section class="mockup-grid">
-<div class="mockup-item"><img src="Aid_Wings/Artboard 1 copy 4.jpg" alt="Mockup 1"></div>
-  <div class="mockup-item"><img src="Aid_Wings/Artboard 4.png" alt="Mockup 2"></div>
-  <div class="mockup-item"><img src="Aid_Wings/Artboard 1 copy 5.jpg" alt="Mockup 3"></div>
+<div class="mockup-item"><img src="Aid_Wings/Artboard 1 copy 4.jpg" loading="lazy" alt="Mockup 1"></div>
+  <div class="mockup-item"><img src="Aid_Wings/Artboard 4.png" loading="lazy" alt="Mockup 2"></div>
+  <div class="mockup-item"><img src="Aid_Wings/Artboard 1 copy 5.jpg" loading="lazy" alt="Mockup 3"></div>
   
   
 </section>

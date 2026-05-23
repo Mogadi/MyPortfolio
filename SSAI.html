@@ -60,6 +60,11 @@
     font-size: 1.1rem; line-height: 1.8; color: var(--dust);
   }
 
+  img {
+  max-width: 100%;
+  height: auto;
+  }
+
   /* Floating Space Gallery */
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -89,6 +94,21 @@
 
   footer { position: relative; z-index: 1; padding: 2rem 4rem; border-top: 1px solid rgba(155,205,221,0.1); display: flex; justify-content: space-between; align-items: center; }
   .footer-copy { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; color: rgba(155,205,221,0.5); }
+
+  /* Mobile Layout */
+  @media (max-width: 768px) {
+    nav { padding: 1.5rem 2rem; }
+    .client-hero { height: 40vh; }
+    .client-logo { max-width: 200px; }
+    .client-info { margin: 2rem auto; padding: 0 1.5rem; }
+    .client-title { font-size: 2.5rem; }
+    
+    /* Adjust floating gallery to show 2 per row instead of 4 */
+    .space-gallery { padding: 1rem 1.5rem 4rem; gap: 1.5rem; }
+    .float-img { width: calc(50% - 0.75rem); min-width: 120px; }
+    
+    .cursor, .cursor-ring { display: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -103,7 +123,7 @@
 </nav>
 
 <section class="client-hero">
-  <img src="_SSAI/Artboard 1_1.png" alt="SSAI Logo" class="client-logo">
+  <img src="_SSAI/Artboard 1_1.png" loading="lazy" alt="SSAI Logo" class="client-logo">
 </section>
 
 <section class="client-info">
@@ -114,15 +134,15 @@
 </section>
 
 <section class="space-gallery">
-  <img src="_SSAI/Artboard 1.jpg" class="float-img" alt="Post 1">
-  <img src="_SSAI/Civil.png" class="float-img" alt="Post 2">
-  <img src="_SSAI/CS.png" class="float-img" alt="Post 3">
-  <img src="_SSAI/Eid.jpg" class="float-img" alt="Post 4">
-  <img src="_SSAI/Iftar 1447 هـــ.jpg" class="float-img" alt="Post 5">
-  <img src="_SSAI/SSAI_Ramadan.jpg" class="float-img" alt="Post 6">
-  <img src="_SSAI/SSAI-1.jpg" class="float-img" alt="Post 7">
-  <img src="_SSAI/SSAI-2.jpg" class="float-img" alt="Post 8">
-  <img src="_SSAI/SSAI-4.jpg" class="float-img" alt="Post 9">
+  <img src="_SSAI/Artboard-1.jpg" class="float-img" loading="lazy" alt="Post 1">
+  <img src="_SSAI/Civil.png" class="float-img" loading="lazy" alt="Post 2">
+  <img src="_SSAI/CS.png" class="float-img" loading="lazy" alt="Post 3">
+  <img src="_SSAI/Eid.jpg" class="float-img" loading="lazy" alt="Post 4">
+  <img src="_SSAI/Iftar-1447-هـــ.jpg" class="float-img" loading="lazy" alt="Post 5">
+  <img src="_SSAI/SSAI_Ramadan.jpg" class="float-img" loading="lazy" alt="Post 6">
+  <img src="_SSAI/SSAI-1.jpg" class="float-img" loading="lazy" alt="Post 7">
+  <img src="_SSAI/SSAI-2.jpg" class="float-img" loading="lazy" alt="Post 8">
+  <img src="_SSAI/SSAI-4.jpg" class="float-img" loading="lazy" alt="Post 9">
  
   
 </section>

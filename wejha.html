@@ -81,6 +81,11 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  img {
+  max-width: 100%;
+  height: auto;
+  }
+
   /* Staggering the animations so they float organically at different times */
   .float-img:nth-child(2n) { animation-delay: 1s; animation-duration: 7s; }
   .float-img:nth-child(3n) { animation-delay: 2.5s; animation-duration: 5.5s; transform: translateY(20px); }
@@ -89,6 +94,21 @@
 
   footer { position: relative; z-index: 1; padding: 2rem 4rem; border-top: 1px solid rgba(155,205,221,0.1); display: flex; justify-content: space-between; align-items: center; }
   .footer-copy { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; color: rgba(155,205,221,0.5); }
+
+  /* Mobile Layout */
+  @media (max-width: 768px) {
+    nav { padding: 1.5rem 2rem; }
+    .client-hero { height: 40vh; }
+    .client-logo { max-width: 200px; }
+    .client-info { margin: 2rem auto; padding: 0 1.5rem; }
+    .client-title { font-size: 2.5rem; }
+    
+    /* Adjust floating gallery to show 2 per row instead of 4 */
+    .space-gallery { padding: 1rem 1.5rem 4rem; gap: 1.5rem; }
+    .float-img { width: calc(50% - 0.75rem); min-width: 120px; }
+    
+    .cursor, .cursor-ring { display: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -103,7 +123,7 @@
 </nav>
 
 <section class="client-hero">
-  <img src="_Wejha/Icon copy.png" alt="wejha Logo" class="client-logo">
+  <img src="_Wejha/Icon copy.png" loading="lazy" alt="wejha Logo" class="client-logo">
 </section>
 
 <section class="client-info">
@@ -114,20 +134,20 @@
 </section>
 
 <section class="space-gallery">
-  <img src="_Wejha/Airplane_Services.jpg" class="float-img" alt="Post 1">
-  <img src="E_Wejha/Eid_2 .jpg" class="float-img" alt="Post 2">
-  <img src="_Wejha/App_.jpg" class="float-img" alt="Post 3">
-  <img src="_Wejha/Contract.jpg" class="float-img" alt="Post 4">
-  <img src="_Wejha/Ethiopia_.jpg" class="float-img" alt="Post 5">
-  <img src="_Wejha/Laoding_.jpg" class="float-img" alt="Post 6">
-  <img src="_Wejha/Raods_.jpg" class="float-img" alt="Post 7">
-  <img src="_Wejha/Security_approval.jpg" class="float-img" alt="Post 8">
-  <img src="_Wejha/Sudi_Visa.jpg" class="float-img" alt="Post 9">
-  <img src="_Wejha/Wejha 2-100.jpg" class="float-img" alt="Post 10">
-  <img src="_Wejha/Wejha_26_Jun .jpg" class="float-img" alt="Post 12">
-  <img src="_Wejha/Wejha_Egy.jpg" class="float-img" alt="Post 13">
-  <img src="_Wejha/Wejha_Update1-100.jpg" class="float-img" alt="Post 14">
-  <img src="_Wejha/App 2.3 .jpg" class="float-img" alt="Post 15">
+  <img src="_Wejha/Airplane_Services.jpg" class="float-img" loading="lazy" alt="Post 1">
+  <img src="_Wejha/Eid_2 .jpg" class="float-img" loading="lazy" alt="Post 2">
+  <img src="_Wejha/App_.jpg" class="float-img" loading="lazy" alt="Post 3">
+  <img src="_Wejha/Contract.jpg" class="float-img" loading="lazy" alt="Post 4">
+  <img src="_Wejha/Ethiopia_.jpg" class="float-img" loading="lazy" alt="Post 5">
+  <img src="_Wejha/Laoding_.jpg" class="float-img" loading="lazy" alt="Post 6">
+  <img src="_Wejha/Raods_.jpg" class="float-img" loading="lazy" alt="Post 7">
+  <img src="_Wejha/Security_approval.jpg" class="float-img" loading="lazy" alt="Post 8">
+  <img src="_Wejha/Sudi_Visa.jpg" class="float-img" loading="lazy" alt="Post 9">
+  <img src="_Wejha/Wejha 2-100.jpg" class="float-img" loading="lazy" alt="Post 10">
+  <img src="_Wejha/Wejha_26_Jun .jpg" class="float-img" loading="lazy" alt="Post 12">
+  <img src="_Wejha/Wejha_Egy.jpg" class="float-img" loading="lazy" alt="Post 13">
+  <img src="_Wejha/Wejha_Update1-100.jpg" class="float-img" loading="lazy" alt="Post 14">
+  <img src="_Wejha/App 2.3 .jpg" class="float-img" loading="lazy" alt="Post 15">
   
   
   
